@@ -1,0 +1,43 @@
+!! 0 –> 
+!! null –> 
+!! undefined –> 
+!! 48 –> 
+!! “hello” –> 
+!! [1, 2, 3] –>
+What would be the output?
+2. Let, var, const
+Var a =3;
+let a =4;
+What would be the output of a?
+3. function doSomething(){
+  x = 33;
+  console.log(x);
+  let x;
+} 
+What is the value of x?
+3.b. 3. function 
+'use strict';
+doSomething(){
+  x = 33;
+  console.log(x);
+  var x;
+} 
+What is the value of x?
+var x = 3;
+Var y = "3";
+x - y <= output?
+x + y <= output?
+5. What is Higher Order Function in javascript?
+6. var obj = {
+    name:  "vivek",
+    getName: function(){
+    console.log(this.name);
+  }
+     
+}
+       
+var getName = obj.getName;
+       
+var obj2 = {name:"akshay" };
+obj2.getName();
+Can you guess the output here & how can I get the name akshay in the place of vivek?
