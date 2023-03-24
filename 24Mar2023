@@ -41,3 +41,101 @@ var getName = obj.getName;
 var obj2 = {name:"akshay" };
 obj2.getName();
 Can you guess the output here & how can I get the name akshay in the place of vivek?
+7. What is temporal dead zone, explain using example?
+8. // Code 1:
+
+function func1(){
+  setTimeout(()=>{
+    console.log(x);
+    console.log(y);
+  },3000);
+
+  var x = 2;
+  let y = 12;
+}
+func1();
+
+// Code 2:
+
+function func2(){
+  for(var i = 0; i < 3; i++){
+    setTimeout(()=> console.log(i),2000);
+}
+}
+func2();
+
+// Code 3:
+
+(function(){
+  setTimeout(()=> console.log(1),2000);
+  console.log(2);
+  setTimeout(()=> console.log(3),0);
+  console.log(4);
+})();
+9. var x = 23;
+
+(function(){
+  var x = 43;
+  (function random(){
+    x++;
+    console.log(x);
+    var x = 21;
+  })();
+})(); 
+10.
+// Code 1
+
+  let hero = {
+    powerLevel: 99,
+    getPower(){
+      return this.powerLevel;
+    }
+  }
+  
+  let getPower = hero.getPower;
+  
+  let hero2 = {powerLevel:42};
+  console.log(getPower());
+  console.log(getPower.apply(hero2));
+  
+
+
+  // Code 2
+  
+  const a = function(){
+    console.log(this);
+  
+    const b = {
+      func1: function(){
+        console.log(this);
+      }  
+    }
+  
+    const c = {
+      func2: ()=>{
+        console.log(this);
+      }
+    }
+  
+    b.func1();
+    c.func2();
+  }
+  
+  a();
+  
+
+
+  // Code 3
+  
+  const b = {
+    name:"Vivek",
+    f: function(){
+      var self = this;
+      console.log(this.name);
+      (function(){
+        console.log(this.name);
+        console.log(self.name);
+      })();
+    }
+  }
+  b.f();
